@@ -1,4 +1,0 @@
-- Fonts
-    - Confusing
-    - Hard to configure
-    - Uses strings instead of enums (maybe)

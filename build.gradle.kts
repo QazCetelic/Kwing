@@ -5,14 +5,14 @@ plugins {
 }
 
 group = "me.qaz"
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.21")
 }
 
 tasks.test {

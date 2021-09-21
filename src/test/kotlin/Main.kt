@@ -1,41 +1,34 @@
-import components.*
-import java.awt.Font
-import javax.swing.BoxLayout
+import kwing.*
+import kwing.components.*
+import kwing.components.layout.*
+import java.io.File
+import javax.imageio.ImageIO
+import javax.swing.Icon
+import javax.swing.ImageIcon
+import javax.swing.JList
+import javax.swing.JOptionPane
+import javax.swing.text.html.ImageView
 
 fun main() {
-    adjustLook()
+    Window ("Kwing") {
+        Panel {
+            val bufferedImage = ImageIO.read(File("/home/qaz/Pictures/Screenshot from 2021-08-24 18-12-38.png"))
+            val image = Image(bufferedImage) within this
+            image.maximumSize = 200 x 150
 
-    Window {
-        panel {
-            val checkbox = checkBox {
-                background = null
+            val array = arrayOf(1, 2, 3, 4, 5)
+            val list = JList(array) within this
+            list.layoutOrientation = JList.HORIZONTAL_WRAP
+            list.visibleRowCount = 5
+            list.onSelect {
+                println(list.selectedValuesList)
             }
-            checkbox.onClick {
-                println(checkbox.isSelected)
+
+            Vertical {
+                repeat(10) {
+                    this += Text("Hello World")
+                }
             }
-
-            layout = BoxLayout(this, BoxLayout.PAGE_AXIS)
-
-            val button = button("Hello World") {
-                println("Hello World")
-            }
-            button.font = Font(Font.SANS_SERIF, Font.BOLD, 15)
-
-            text("0987654321")
-            text("0987654321")
-            text("0987654321")
-            button("1234567")
-            button("qwertyu")
-        }
-        isUndecorated = false
-        background = null
-
-        isVisible = true
-    }
-
-    Window("Hello World") {
-        button("-0-") {
-            println("Done")
         }
 
         isVisible = true
