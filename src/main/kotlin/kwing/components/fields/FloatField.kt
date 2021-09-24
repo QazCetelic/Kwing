@@ -1,6 +1,6 @@
 package kwing.components.fields
 
-class FloatField(float: Float): ValueField(float) {
+open class FloatField(float: Float): ValueField<Float>(float) {
     override fun verifyInput(text: String): Boolean = text.toFloatOrNull() != null
     var float: Float
         get() = text.toFloat()

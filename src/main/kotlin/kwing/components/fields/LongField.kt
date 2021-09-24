@@ -1,6 +1,7 @@
 package kwing.components.fields
 
-class LongField(long: Long): ValueField(long) {
+open class LongField(long: Long): ValueField<Long>(long) {
+    override val emptyFieldFallback: Long = 0L
     override fun verifyInput(text: String): Boolean = text.toLongOrNull() != null
     var long: Long
         get() = text.toLong()
