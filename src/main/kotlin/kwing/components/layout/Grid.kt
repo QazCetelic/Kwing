@@ -8,21 +8,17 @@ import java.awt.Dimension
 import java.awt.GridLayout
 
 fun Container.Grid(dimension: Dimension = 3 x 3, setup: ComponentSetup<Panel> = {}): Panel {
-    val panel = Panel()
-    panel.layout = GridLayout(dimension.height, dimension.width).apply {
-        hgap = 0
-        vgap = 0
-    }
-    panel.apply(setup)
-    this.add(panel)
-    return panel
+    val grid = kwing.components.layout.Grid(dimension)
+    setup(grid)
+    add(grid)
+    return grid
 }
 
-fun Grid(dimension: Dimension = 3 x 3): Panel {
-    val panel = Panel()
-    panel.layout = GridLayout(dimension.height, dimension.width).apply {
-        hgap = 0
-        vgap = 0
+open class Grid(dimension: Dimension = 3 x 3): Panel() {
+    init {
+        layout = GridLayout(dimension.height, dimension.width).apply {
+            hgap = 0
+            vgap = 0
+        }
     }
-    return panel
 }

@@ -12,6 +12,11 @@ fun Container.Vertical(setup: ComponentSetup<Panel>): Panel {
     return panel
 }
 
+fun Container.VerticalLayout(): BoxLayout {
+    return BoxLayout(this, BoxLayout.Y_AXIS)
+}
+
+
 open class Vertical(): Panel() {
     init {
         layout = BoxLayout(this, BoxLayout.Y_AXIS)
