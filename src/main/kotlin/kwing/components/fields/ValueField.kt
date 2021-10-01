@@ -4,7 +4,7 @@ import kwing.events.onFocusLost
 import kwing.events.onKeyReleased
 import javax.swing.JTextField
 
-abstract class ValueField<T>(value: T): JTextField(value.toString()) {
+abstract class ValueField<T>(value: T, columns: Int): JTextField(value.toString(), columns) {
     private var previousText: String
 
     /**
