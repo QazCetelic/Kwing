@@ -22,7 +22,3 @@ var Slider.labels: Map<Int, String>
         }
         labelTable = hashtable
     }
-
-fun Slider.label(index: Int, text: String) {
-    labels = labels.toMutableMap().apply { this[index] = text }
-}
